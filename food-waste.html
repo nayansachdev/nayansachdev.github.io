@@ -1,1 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Reducing Food Waste | Nayan Sachdev</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f5;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            background: rgba(247, 247, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #ddddda;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.55;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 1100px;
+            margin: auto;
+            padding: 130px 6% 80px;
+        }
+
+        .back-link {
+            font-size: 0.9rem;
+            margin-bottom: 35px;
+            display: inline-block;
+            color: #666;
+        }
+
+        .back-link:hover {
+            color: #111;
+        }
+
+        .project-number {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 30px;
+            max-width: 1000px;
+        }
+
+        .hero-text {
+            font-size: 1.25rem;
+            color: #555;
+            max-width: 720px;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 100px 6%;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        p {
+            max-width: 800px;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        /* OVERVIEW */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 45px;
+        }
+
+        .overview-card {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .overview-card p {
+            margin-top: 8px;
+        }
+
+        /* DARK SECTION */
+        .dark-section {
+            background: #171717;
+            color: white;
+        }
+
+        .dark-section p {
+            color: #c7c7c7;
+        }
+
+        .dark-section .section-label {
+            color: #999;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .problem-points {
+            display: grid;
+            gap: 30px;
+        }
+
+        .problem-point {
+            border-left: 2px solid #666;
+            padding-left: 20px;
+        }
+
+        .problem-point h3 {
+            color: white;
+        }
+
+        /* PROCESS */
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .process-card {
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .process-number {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .process-card p {
+            font-size: 0.95rem;
+        }
+
+        /* CONCEPT */
+        .concept-box {
+            margin-top: 50px;
+            padding: 40px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 18px;
+        }
+
+        .concept-box p {
+            max-width: 850px;
+        }
+
+        .concept-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 35px;
+        }
+
+        .feature {
+            background: #f0f0ed;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .feature h3 {
+            font-size: 1.1rem;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+        }
+
+        /* STAKEHOLDERS */
+        .stakeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .stakeholder {
+            padding: 25px;
+            border: 1px solid #d8d8d4;
+            border-radius: 14px;
+            background: #fff;
+        }
+
+        .stakeholder p {
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+
+        /* EVALUATION */
+        .evaluation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 45px;
+        }
+
+        .evaluation-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .evaluation-card p {
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 50px 6%;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            .nav-links {
+                gap: 15px;
+                font-size: 0.85rem;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .overview-grid,
+            .problem-grid,
+            .evaluation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .concept-features,
+            .stakeholder-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .hero {
+                padding: 120px 5% 70px;
+            }
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .concept-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html" class="logo">NS.</a>
+
+        <div class="nav-links">
+            <a href="index.html">Projects</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <header class="hero">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+        <div class="project-number">Product Design Engineering Project</div>
+
+        <h1>Reducing<br>Food Waste.</h1>
+
+        <p class="hero-text">
+            A product design project exploring how a simple smart-home
+            system could help households reduce food waste by making
+            people more aware of food before it goes out of date.
+        </p>
+    </header>
+
+
+    <!-- OVERVIEW -->
+    <section>
+        <div class="section-inner">
+
+            <div class="section-label">01 — Overview</div>
+
+            <h2>The challenge</h2>
+
+            <p>
+                This project focused on the problem of food waste within
+                households, particularly considering the needs of
+                lower-income communities. The aim was to develop a product
+                that could help users keep track of food and encourage them
+                to use it before it becomes waste.
+            </p>
+
+            <div class="overview-grid">
+
+                <div class="overview-card">
+                    <h3>Project focus</h3>
+                    <p>
+                        Developing a practical solution that could fit into
+                        everyday household routines without requiring users
+                        to constantly monitor their food themselves.
+                    </p>
+                </div>
+
+                <div class="overview-card">
+                    <h3>Design objective</h3>
+                    <p>
+                        Provide timely reminders about food that is
+                        approaching its expiry or is likely to be forgotten.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROBLEM -->
+    <section class="dark-section">
+        <div class="section-inner">
+
+            <div class="section-label">02 — Problem Definition</div>
+
+            <div class="problem-grid">
+
+                <div>
+                    <h2>Making food easier to remember.</h2>
+
+                    <p>
+                        A key issue identified during the project was that
+                        food can be forgotten once it has been placed inside
+                        a refrigerator. Even when users intend to consume
+                        food, it can become overlooked as other items are
+                        added.
+                    </p>
+                </div>
+
+                <div class="problem-points">
+
+                    <div class="problem-point">
+                        <h3>Food gets forgotten</h3>
+                        <p>
+                            Items can remain in the fridge until they are
+                            no longer suitable to eat.
+                        </p>
+                    </div>
+
+                    <div class="problem-point">
+                        <h3>Users need reminders</h3>
+                        <p>
+                            A reminder system could bring attention to food
+                            at the right point rather than relying entirely
+                            on memory.
+                        </p>
+                    </div>
+
+                    <div class="problem-point">
+                        <h3>Affordability matters</h3>
+                        <p>
+                            The product needed to consider the needs of
+                            households where reducing unnecessary food
+                            spending is particularly important.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- RESEARCH -->
+    <section>
+        <div class="section-inner">
+
+            <div class="section-label">03 — Research & Users</div>
+
+            <h2>Designing around real users.</h2>
+
+            <p>
+                The project considered several stakeholders connected to
+                food waste and household food use. This helped broaden the
+                design beyond a single user and encouraged consideration of
+                affordability, accessibility and everyday behaviour.
+            </p>
+
+            <div class="stakeholder-grid">
+
+                <div class="stakeholder">
+                    <h3>Households</h3>
+                    <p>
+                        People who need a simple way to keep track of food
+                        stored at home.
+                    </p>
+                </div>
+
+                <div class="stakeholder">
+                    <h3>Families</h3>
+                    <p>
+                        Larger households where food usage and organisation
+                        can become more difficult to manage.
+                    </p>
+                </div>
+
+                <div class="stakeholder">
+                    <h3>Local shops</h3>
+                    <p>
+                        Businesses connected to the wider issue of food
+                        distribution and waste.
+                    </p>
+                </div>
+
+                <div class="stakeholder">
+                    <h3>Foodbanks & volunteers</h3>
+                    <p>
+                        Organisations involved in supporting people and
+                        redistributing food.
+                    </p>
+                </div>
+
+                <div class="stakeholder">
+                    <h3>Schools & charities</h3>
+                    <p>
+                        Potential organisations for raising awareness and
+                        encouraging better food-management habits.
+                    </p>
+                </div>
+
+                <div class="stakeholder">
+                    <h3>Local authorities</h3>
+                    <p>
+                        Wider stakeholders interested in reducing household
+                        waste and improving sustainability.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DESIGN PROCESS -->
+    <section>
+        <div class="section-inner">
+
+            <div class="section-label">04 — Design Development</div>
+
+            <h2>From problem to concept.</h2>
+
+            <p>
+                The design process focused on understanding the problem
+                first, then developing and refining a concept around the
+                needs of the user.
+            </p>
+
+            <div class="process">
+
+                <div class="process-card">
+                    <div class="process-number">01</div>
+                    <h3>Research</h3>
+                    <p>
+                        Investigated the problem of household food waste
+                        and the users affected by it.
+                    </p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-number">02</div>
+                    <h3>Problem definition</h3>
+                    <p>
+                        Identified forgotten food and poor visibility of
+                        stored items as important design considerations.
+                    </p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-number">03</div>
+                    <h3>Ideation</h3>
+                    <p>
+                        Explored ways of reminding users about food before
+                        it becomes waste.
+                    </p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-number">04</div>
+                    <h3>Concept refinement</h3>
+                    <p>
+                        Developed the strongest idea into a clearer
+                        household product concept.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FINAL CONCEPT -->
+    <section class="dark-section">
+        <div class="section-inner">
+
+            <div class="section-label">05 — Final Concept</div>
+
+            <h2>A smarter fridge experience.</h2>
+
+            <p>
+                The final concept centred around a system that helps the
+                user remember food stored in their refrigerator and alerts
+                them when an item needs attention.
+            </p>
+
+            <div class="concept-box">
+
+                <h3>The proposed system</h3>
+
+                <p>
+                    The concept uses reminders to bring food to the user's
+                    attention before it becomes waste. Rather than relying
+                    on the user to remember every item in the fridge, the
+                    system provides repeated prompts so that food is more
+                    likely to be used in time.
+                </p>
+
+                <div class="concept-features">
+
+                    <div class="feature">
+                        <h3>Awareness</h3>
+                        <p>
+                            Makes users more aware of food that could
+                            otherwise be forgotten.
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>Reminders</h3>
+                        <p>
+                            Provides repeated prompts to encourage action
+                            before food is wasted.
+                        </p>
+                    </div>
+
+                    <div class="feature">
+                        <h3>Everyday use</h3>
+                        <p>
+                            Designed around a familiar household
+                            environment and existing routines.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- DESIGN THINKING -->
+    <section>
+        <div class="section-inner">
+
+            <div class="section-label">06 — Product Design Considerations</div>
+
+            <h2>More than just a reminder.</h2>
+
+            <div class="evaluation-grid">
+
+                <div class="evaluation-card">
+                    <h3>User needs</h3>
+                    <p>
+                        The system needs to be simple enough to fit naturally
+                        into everyday kitchen routines without becoming an
+                        additional burden for the user.
+                    </p>
+                </div>
+
+                <div class="evaluation-card">
+                    <h3>Accessibility</h3>
+                    <p>
+                        Clear and understandable feedback is important so
+                        that users can quickly understand which food needs
+                        attention.
+                    </p>
+                </div>
+
+                <div class="evaluation-card">
+                    <h3>Affordability</h3>
+                    <p>
+                        The design should consider the cost of components
+                        and manufacturing so that the solution remains
+                        realistic for its intended users.
+                    </p>
+                </div>
+
+                <div class="evaluation-card">
+                    <h3>Future development</h3>
+                    <p>
+                        The concept could be developed further through
+                        improved food identification, better user feedback
+                        and more automated monitoring.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- REFLECTION -->
+    <section class="dark-section">
+        <div class="section-inner">
+
+            <div class="section-label">07 — Reflection</div>
+
+            <h2>What I learned.</h2>
+
+            <p>
+                This project developed my ability to move from a broad
+                social problem towards a more focused product opportunity.
+                It also reinforced the importance of considering users,
+                stakeholders and practical constraints throughout the
+                design process rather than focusing only on the final
+                product.
+            </p>
+
+            <br><br>
+
+            <p>
+                The project also gave me experience in communicating a
+                product concept through research, design development and
+                evaluation, which is an important part of my development
+                as a Product Design Engineer.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Nayan Sachdev · Product Design Engineering</p>
+    </footer>
+
+</body>
+</html>
