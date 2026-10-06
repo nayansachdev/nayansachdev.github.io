@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Smart Home Seizure Detection | Nayan Sachdev</title>
+    <title>Tonic-Clonic Seizure Detection | Nayan Sachdev</title>
 
     <style>
         * {
@@ -31,7 +31,7 @@
             padding: 24px 6%;
             display: flex;
             justify-content: space-between;
-            background: rgba(245,245,243,0.9);
+            background: rgba(245, 245, 243, 0.9);
             backdrop-filter: blur(10px);
             z-index: 10;
         }
@@ -50,8 +50,8 @@
         }
 
         .hero {
-            min-height: 85vh;
-            padding: 170px 6% 100px;
+            min-height: 100vh;
+            padding: 150px 6% 80px;
             max-width: 1400px;
             margin: auto;
             display: flex;
@@ -59,7 +59,8 @@
             justify-content: center;
         }
 
-        .label {
+        .label,
+        .section-number {
             text-transform: uppercase;
             letter-spacing: 2px;
             font-size: 13px;
@@ -81,18 +82,17 @@
             color: #555;
         }
 
+        .hero-image {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 60px;
+            display: block;
+        }
+
         section {
             max-width: 1400px;
             margin: auto;
             padding: 110px 6%;
-        }
-
-        .section-number {
-            font-size: 13px;
-            color: #777;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 45px;
         }
 
         .two-column {
@@ -122,10 +122,6 @@
             background: #dededb;
             padding: 50px;
             margin-top: 50px;
-        }
-
-        .highlight h3 {
-            margin-bottom: 20px;
         }
 
         .concepts {
@@ -296,6 +292,12 @@
         while reducing false positives.
     </p>
 
+    <img
+        src="Prototype picture.jpg"
+        alt="Smart home seizure detection prototype"
+        class="hero-image"
+    >
+
 </div>
 
 
@@ -330,7 +332,7 @@
             </p>
 
             <p>
-                Our goal was to develop a non-invasive system
+                The aim was to develop a non-invasive system
                 capable of monitoring the home environment
                 using multiple sensing methods.
             </p>
@@ -369,10 +371,10 @@
             </p>
 
             <p>
-                Research into existing products showed that many
-                solutions were focused on specific environments
-                rather than treating the home as a continuous
-                monitoring environment.
+                This created an opportunity to investigate whether
+                a smart home system could provide additional
+                monitoring without requiring the user to wear
+                a device.
             </p>
 
         </div>
@@ -475,7 +477,7 @@
             <p>
                 Improved privacy compared with conventional
                 video, but remained invasive and could be
-                affected by environmental temperature changes.
+                affected by environmental conditions.
             </p>
         </div>
 
@@ -501,9 +503,9 @@
             <div class="concept-number">04</div>
             <h3>Ultrasonic motion</h3>
             <p>
-                Provided broad room coverage without imaging,
-                but required another sensing method to reduce
-                false positives.
+                Provided room-level movement information
+                without imaging, but required another
+                sensing method to reduce false positives.
             </p>
         </div>
 
@@ -526,7 +528,7 @@
 </section>
 
 
-<!-- SYSTEM -->
+<!-- SYSTEM DESIGN -->
 
 <section>
 
@@ -540,8 +542,8 @@
     <div class="system">
 
         <p>
-            The prototype uses an Arduino-based state system
-            to continuously sample both sensors and evaluate
+            The prototype uses an Arduino-based system to
+            continuously sample both sensors and evaluate
             whether the measured pattern meets the criteria
             for a probable event.
         </p>
@@ -623,14 +625,12 @@
                 A structured testing plan was developed to
                 investigate false positives and determine
                 whether the multi-sensor logic could distinguish
-                isolated events from sustained seizure-like
-                activity.
+                isolated events from sustained movement and sound.
             </p>
 
         </div>
 
     </div>
-
 
     <div class="testing">
 
@@ -698,15 +698,9 @@
             </p>
 
             <p>
-                The system also demonstrated a fast response once
-                both conditions were satisfied within the same
-                confirmation window.
-            </p>
-
-            <p>
-                These results supported the design decision to
-                combine two sensing methods rather than relying
-                on a single input.
+                These results supported the decision to combine
+                two sensing methods rather than relying on a
+                single input.
             </p>
 
         </div>
@@ -738,16 +732,9 @@
             </p>
 
             <p>
-                This introduced important limitations. Ultrasonic
-                measurements depend on sensor positioning and the
-                direction of movement, while sound measurements
+                Ultrasonic measurements depend on sensor positioning
+                and movement direction, while sound measurements
                 can be affected by background noise.
-            </p>
-
-            <p>
-                The system also relies on fixed thresholds, meaning
-                the same settings may not be appropriate for every
-                environment or user.
             </p>
 
             <p>
@@ -762,8 +749,6 @@
 
 </section>
 
-
-<!-- FOOTER -->
 
 <footer>
     Nayan Sachdev — Product Design Engineering
