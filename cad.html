@@ -1,1 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD & Mechanical Design | Nayan Sachdev</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f3;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 22px 6%;
+            background: rgba(245,245,243,0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #171717;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .hero {
+            max-width: 1250px;
+            margin: auto;
+            padding: 150px 6% 80px;
+        }
+
+        .back {
+            display: inline-block;
+            color: #666;
+            margin-bottom: 45px;
+            font-size: 14px;
+        }
+
+        .label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 100px);
+            letter-spacing: -4px;
+            line-height: 0.98;
+            margin-bottom: 30px;
+        }
+
+        h1 span { color: #777; }
+
+        .intro {
+            max-width: 680px;
+            font-size: 19px;
+            color: #555;
+        }
+
+        section {
+            padding: 90px 6%;
+        }
+
+        .inner {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: clamp(32px, 5vw, 55px);
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 22px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #555;
+            max-width: 750px;
+        }
+
+        .section-intro {
+            margin-bottom: 35px;
+        }
+
+        .image-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .caption {
+            padding: 18px 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .cover-image {
+            margin-top: 45px;
+        }
+
+        .render-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 40px;
+            align-items: start;
+        }
+
+        .render-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .dark {
+            background: #20201e;
+            color: white;
+        }
+
+        .dark .label { color: #aaa; }
+        .dark p { color: #ccc; }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill {
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+
+        .skill p { font-size: 15px; }
+
+        footer {
+            padding: 30px 6%;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: #777;
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+            .render-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 { letter-spacing: -2px; }
+
+            section { padding: 65px 6%; }
+
+            .nav-links { gap: 12px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NS.</a>
+
+        <div class="nav-links">
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <a href="index.html" class="back">← Back to portfolio</a>
+
+        <div class="label">Product Design Engineering · CAD Portfolio</div>
+
+        <h1>CAD &<br><span>Mechanical Design.</span></h1>
+
+        <p class="intro">
+            Exploring product form, detail and visual presentation through
+            three-dimensional CAD modelling and product rendering.
+            This page showcases my wristwatch design and its alternative finish.
+        </p>
+    </header>
+
+    <section>
+        <div class="inner">
+            <div class="label">01 — Product Render</div>
+
+            <h2>Wristwatch concept</h2>
+
+            <p class="section-intro">
+                A minimalist wristwatch concept featuring a circular face,
+                detailed bezel and textured mesh strap. The render explores
+                the product's form, materials and appearance in a real-world setting.
+            </p>
+
+            <div class="image-card cover-image">
+                <img
+                    src="Cover%20Image.jpg"
+                    alt="Black wristwatch concept rendered on a wooden table"
+                >
+
+                <div class="caption">
+                    Wristwatch concept — black finish with a textured mesh strap.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark">
+        <div class="inner">
+            <div class="label">02 — Design Variation</div>
+
+            <h2>Exploring colour and styling</h2>
+
+            <p>
+                An alternative sage-green finish explores how colour and
+                material choices can change the character of the same
+                overall product concept.
+            </p>
+
+            <div class="render-grid">
+                <div class="image-card">
+                    <img
+                        src="piss%202%20done.jpg"
+                        alt="Sage-green wristwatch concept alongside personal technology products"
+                        loading="lazy"
+                    >
+
+                    <div class="caption">
+                        Alternative sage-green product render.
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Visual design considerations</h3>
+
+                    <p>
+                        The renders communicate the relationship between the
+                        watch face, bezel, strap and overall proportions.
+                        Presenting different finishes helps demonstrate how
+                        styling decisions affect the product's visual identity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="inner">
+            <div class="label">03 — Skills Demonstrated</div>
+
+            <h2>Design and presentation</h2>
+
+            <div class="skills-grid">
+                <div class="skill">
+                    <h3>3D CAD</h3>
+                    <p>
+                        Developing and visualising a product concept
+                        in three dimensions.
+                    </p>
+                </div>
+
+                <div class="skill">
+                    <h3>Product Styling</h3>
+                    <p>
+                        Exploring proportions, surface details,
+                        colour and material appearance.
+                    </p>
+                </div>
+
+                <div class="skill">
+                    <h3>Visualisation</h3>
+                    <p>
+                        Presenting product concepts through rendered
+                        images and contextual scenes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2026 Nayan Sachdev</span>
+        <a href="index.html">Back to portfolio ↑</a>
+    </footer>
+
+</body>
+</html>
