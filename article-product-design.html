@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Makes a Good Product? | Nayan Sachdev</title>
+  <style>
+    :root {
+      --green: #54745c;
+      --dark: #202620;
+      --muted: #687068;
+      --line: #e2e6e0;
+      --background: #fafbf9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--dark);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.8;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 40px, 760px);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .brand { font-weight: 700; }
+
+    .back {
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    article { padding: 65px 0 80px; }
+
+    .category {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 54px);
+      line-height: 1.15;
+      letter-spacing: -2px;
+      margin: 16px 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    .date {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 22px 0 35px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 32px 0;
+    }
+
+    h2 {
+      font-size: 25px;
+      line-height: 1.35;
+      margin-top: 36px;
+    }
+
+    p, li { color: #424a42; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 760px); }
+      article { padding-top: 45px; }
+      h1 { letter-spacing: -1.3px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">Nayan Sachdev</a>
+      <a class="back" href="articles.html">← All articles</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <article>
+      <div class="category">Product Design</div>
+
+      <h1>What makes a good product?</h1>
+
+      <p class="subtitle">
+        An exploration of how user needs, design decisions and
+        engineering constraints come together to create useful products.
+      </p>
+
+      <div class="date">25 October 2026 · Example article</div>
+
+      <hr>
+
+      <h2>Introduction</h2>
+
+      <p>
+        A good product does more than perform its intended function.
+        It should solve a genuine problem, be straightforward to use
+        and work reliably for the people it is designed for.
+      </p>
+
+      <p>
+        Product design engineering brings together creative thinking
+        and technical problem-solving. It requires designers to
+        consider what users need while also understanding the
+        practical constraints involved in making a product.
+      </p>
+
+      <h2>Understanding the user</h2>
+
+      <p>
+        The first step in designing a useful product is understanding
+        the problem. User research can reveal frustrations, existing
+        workarounds and needs that may not be immediately obvious.
+      </p>
+
+      <p>
+        These findings can help establish design requirements and
+        provide a way to judge whether a proposed solution is effective.
+      </p>
+
+      <h2>Balancing design and engineering</h2>
+
+      <p>
+        A product may look appealing but still fail if it is too
+        expensive to manufacture, difficult to maintain or unreliable
+        in everyday use. Material selection, manufacturing methods,
+        durability and cost all influence the final design.
+      </p>
+
+      <p>
+        Good engineering involves balancing these considerations
+        rather than optimising one feature in isolation.
+      </p>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        A successful product combines a clear understanding of users
+        with thoughtful design and sound engineering. The most
+        effective solution is not necessarily the most complicated;
+        it is the one that addresses the problem appropriately.
+      </p>
+
+      <hr>
+
+      <p><em>
+        This is starter example text. Replace it with your own
+        article before presenting it as your personal work.
+      </em></p>
+
+      <a class="back" href="articles.html">← Back to all articles</a>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Nayan Sachdev · Product Design Engineering
+    </div>
+  </footer>
+</body>
+</html>
